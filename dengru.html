@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>参赛作品</title>
+    <link rel="stylesheet" href="dengru.css">
+</head>
+<body>
+  <header>
+    <a href="dengru.html" class="logo">Huang</a>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shouye.html">Look</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="dengru.html" class="active">Register</a></li>
+    </ul>
+  </header>
+
+  <div class="dahezi">
+        <form>
+            <h1>Please Login</h1>
+            <div class="hez1">
+                <input type="text" required>
+                <label for="">User</label>
+            </div>
+            <div class="hez1">
+                <input type="password" required>
+                <label for="">Password</label>
+            </div>
+            <button class="btn">登陆</button>
+            <p>Don't have an account?
+                <a href="">Register</a>
+            </p>
+        </form>
+   </div>
+</body>
+
+<script>
+    // 模拟正确的账号密码
+    const correctUsername = 'admin';
+    const correctPassword = '123456';
+
+    function checkCredentials(username, password) {
+        return username === correctUsername && password === correctPassword;
+    }
+
+    document.querySelector('.btn').addEventListener('click', function (event) {
+        event.preventDefault(); // 阻止表单提交的默认行为
+        const inputUsername = document.querySelectorAll('.hez1 input')[0].value;
+        const inputPassword = document.querySelectorAll('.hez1 input')[1].value;
+
+        if (checkCredentials(inputUsername, inputPassword)) {
+            // 如果账号密码正确，则处理登录逻辑，比如跳转到另一个页面
+            window.location.href = "./主页.html";
+        } else {
+            // 如果账号密码不正确，则提示用户
+            alert('账号或密码错误，请重新输入');
+        }
+    });
+
+    const labels = document.querySelectorAll('.hez1 label')
+    labels.forEach(label => {
+        label.innerHTML = label.innerText
+            .split('')
+            .map((letter, idx) => `<span style="transition-delay:${idx * 50}ms">${letter}</span>`)
+            .join('')
+    })
+</script>
+
+</html>

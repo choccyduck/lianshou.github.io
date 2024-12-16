@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap'); 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+
+    background: linear-gradient(#2b1055,#7597de);
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    height: 100vh;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10000;
+}
+
+header .logo {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 2em;
+  text-transform: uppercase; /* 大写 */
+  letter-spacing: 2px; /* 字符间距 */
+}
+
+header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  header ul li {
+    list-style: none;
+    margin-left: 20px;
+  }
+  
+  header ul li a {
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #fff;
+    border-radius: 20px;
+  }
+  
+  header ul li a:hover,
+  header ul li a.active {
+    background: #fff;
+    color: #2b1055;
+  }
+
+.dahezi {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px 40px;
+    border-radius: 5px;
+    margin: auto;
+}
+
+.dahezi h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.dahezi a {
+    color: lightblue;
+}
+
+.hez1 {
+    position: relative;
+    margin: 20px 0px 40px;
+}
+
+.hez1 input {
+    background-color: transparent;
+    border: 0px;
+    border-bottom: 2px #fff solid;
+    display: block;
+    width: 100%;
+    padding: 5px 0;
+    font-size: 18px;
+    color: #fff;
+    outline: 0;
+}
+
+.hez1 input:focus,
+.hez1 input:valid {
+    outline: 0;
+
+}
+
+.hez1 label {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    pointer-events: none;
+
+}
+
+.hez1 label span {
+    display: inline-block;
+    font-size: 18px;
+    min-width: 5px;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.hez1 input:focus+label span,
+.hez1 input:valid+label s pan {
+    color: lightblue;
+    transform: translateY(-30px);
+}
+
+.btn {
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    background: lightblue;
+    padding: 15px;
+    font-family: inherit;
+    font-size: 16px;
+    border: 0;
+    border-radius: 5px;
+    text-align: center;
+    color: #fff;
+}
+
+.btn:hover {
+    background-color: rgb(139, 194, 162);
+}
+
+

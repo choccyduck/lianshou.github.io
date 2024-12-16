@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>参赛作品</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <header>
+        <a href="contact.html" class="logo">Huang</a>
+        <ul>
+            <li><a href="index.html" >Home</a></li>
+            <li><a href="shouye.html">Look</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+            <li><a href="dengru.html">Register</a></li>
+        </ul>
+    </header>
+    
+    <div class="msgs">
+        <h1>留言板</h1>
+        <div class="form">
+            <input type="text" id="username" placeholder="用户名">
+            <textarea id="msg" placeholder="留言内容"></textarea>
+            <button id="submitBtn">留言</button>
+        </div>
+        <div id="msgBoard">
+            <div class="msg">
+                <div class="msg-info">
+                    <div class="info">
+                        <img src="./img/1.jpg"width="50px" height="50px">
+                        <strong>山羊</strong>
+                    </div>
+                    <span>发布于2024/12/05 06:00:00</span>
+                </div>
+                <div class="content">你好</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('submitBtn').addEventListener('click', function() {
+            var username = document.getElementById('username').value;
+            var msg = document.getElementById('msg').value;
+            var sensitiveWords = ['哈哈哈', '你好', 'cnm']; // 替换为实际的敏感词列表
+
+            if (msg === '') {
+                alert('请输入内容：');
+                return;
+            }
+            if (username === '') {
+                username = '匿名';
+            }
+
+            // 检查敏感词
+            for (var i = 0; i < sensitiveWords.length; i++) {
+                if (msg.includes(sensitiveWords[i])) {
+                    alert('您的留言包含敏感词，请修改后重新提交。');
+                    return;
+                }
+            }
+
+            var msgBoard = document.getElementById('msgBoard');
+            var newMessage = document.createElement('div');
+            newMessage.classList.add('msg');
+
+            newMessage.innerHTML = '<div class="msg-info"><div class="info"><img src=".//img/1.jpg"><strong>' + username + '</strong></div><span>发布于:' + getCurrentTime() + '</span></div><div class="content">' + msg + '</div>';
+
+            msgBoard.insertBefore(newMessage, msgBoard.firstChild);
+
+            document.getElementById('username').value = '';
+            document.getElementById('msg').value = '';
+        });
+
+        function getCurrentTime() {
+            var now = new Date();
+            var year = now.getFullYear();
+            var month = ('0' + (now.getMonth() + 1)).slice(-2);
+            var day = ('0' + now.getDate()).slice(-2);
+            var hours = ('0' + now.getHours()).slice((-2));
+            var minutes = ('0' + now.getMinutes()).slice(-2);
+            var seconds = ('0' + now.getSeconds()).slice(-2);
+            return year + '/' + month + '/' + day + ' ' + hours + ':' + minutes + ':' + seconds;
+        }
+    </script>
+</body>
+</html>

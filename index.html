@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>参赛作品</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">Huang</a>
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="shouye.html">Look</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="dengru.html">Register</a></li>
+    </ul>
+  </header>
+  <section>
+    <img src="img/stars.png" id="stars">
+    <img src="img/moon.png" id="moon">
+    <img src="img/mountains_behind.png" id="mountains_behind">
+    <h2 id="text">Moon Light</h2>
+    <a href="#sec" id="btn">Explore</a>
+    <img src="img/mountains_front.png" id="mountains_front">
+  </section>
+  <div class="sec" id="sec">
+    <h2>你很好，只是世界对你不曾温柔。</h2>
+    <p>当我写下这封信时，我希望此时的你，不要哭泣，不要沉溺于痛苦和伤悲。我想你能想到给你写这封信时的我，嘴角充满笑意。当然，对你来说我只是个陌生的路人。但此时，我诚心地希望，你能活下去，好好活下去，并早日康复。因为那才是真正的你。</p>
+    <p>在落笔前，我曾想到许多纸韵墨香的题目，但最终还是选择了这看起平平淡淡的信函。因为我觉得，在你毫无色彩的世界里，也仅有这样的标题，可以让你提起半分兴趣。</p>
+    <P>忽然想写这样的一封信，是因为之前目睹，她从十七层重楼洒然而下，以生命绽放出鲜红明艳的彼岸花。遥望那片炽热的冰冷，透过摄像头的灵魂，她生前一定很痛苦……或有人心生叹息，为其谱曲作词，听着歌调心有所感的人站上檐梁，再一瞬的绚烂，周而复始，无穷无尽…</P>
+    <p>“有时一跃而下仅是一瞬间的勇气，所以请原谅我没说抱歉，也没说再见。”这是曾经看过一个抑郁症患者的随手笔记里的一句话。</p>
+    <p>抑郁与经历的多少无关。所以你不必自卑，不是所有人都能够坚强，也不是你过于脆弱。只是每个人的在意不同罢了。有时万千风雨，也能岿然不动；而有时仅是只言片语，便已体无完肤。世间残酷，未给予你珍惜的，在此我说声抱歉。</p>
+    <p>写下这封信的同时，我也写了另一篇文章，题目是《人类的悲欢并不相通》。这个世界上是没有感同身受，你的悲伤不会有人能完完全全体会到的。我想说的是，请寻找你的心，去寻找属于你的喜悦。那也许是一个漫长的过程，我也明白，提起兴趣很难，但请你记得，你要活下去，总有前方，会有属于你的光。</p>
+    <p>请你卸去伪装，不必在狂欢里强颜欢笑，也不必在哀悼时矫揉造作。请跟随你的心，或展颜一笑，或垂下眼眸。愿你找到真正的笑容。</p>
+    <p>请你好好活下去，虽然人间不仁，痛苦满怀，虽然活下去也不知有怎样的意义，虽然活下去也不知该做些什么，但是，请你活下去，请你找到意义，找到希望。</p>
+    <h4>最后，有一段话送给所有人；</h4>
+    <P>“你是不是有病？”“抑郁？无病乱呻吟”“你经历过什么？温室里长大的孩子就是娇气”“没事，长大了就好了。”“活不了就去死啊，你这不还是死皮赖脸地活着？”“你给我积极一点。”“真脆弱，人世间那么多不顺，都照你这样是不是都该自杀了？”“博人眼球有意思吗？”……</P>
+    <P>当你说出这样的话，你有没有想过，可能有一人偶然听到或看到，于是结束了自己的生命。你没有杀伯仁，但伯仁因你而死。而次日作为杀人凶手的你，坐在家中看着新闻，只是事不关己地，轻飘飘地说一句：“还真有自杀的啊，为什么那么想不开，脆弱，都不想想家人…”不管昨夜发生了什么，第二天太阳依旧会升起，城市依旧车水马龙，但世界却不总是明媚的。有时，只是因为只言片语，就失去了美好。不要当其降临在自己身上时，才懂得“人言可畏”四个字。人生一场，我劝你善良。</P>
+    <h4>罗生门来，恶鬼欲祸乱，窥人间，知人性，竟落荒而走。</h4>
+
+  </div>
+
+  <script>
+    let stars = document.getElementById('stars')
+    let moon = document.getElementById('moon')
+    let mountains_behind = document.getElementById('mountains_behind')
+    let text = document.getElementById('text')
+    let btn = document.getElementById('btn')
+    let mountains_front = document.getElementById('mountains_front')
+    let header = document.querySelector('header')
+
+    window.addEventListener('scroll', function(){
+      let value = window.scrollY;
+      stars.style.left = value * 0.25 + 'px'
+      moon.style.top = value * 1.05 + 'px'
+      mountains_behind.style.top = value * 0.5 + 'px'
+      mountains_front.style.top = value * 0 + 'px'
+      text.style.marginRight = value * 4 + 'px'
+      text.style.marginTop = value * 1.5 + 'px'
+      btn.style.marginTop = value * 1.5 + 'px'
+      header.style.top = value * 0.5 + 'px'
+    })
+  </script>
+</body>
+</html>
